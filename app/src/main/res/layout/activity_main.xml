@@ -4,69 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="81dp">
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/editTextSum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Количество ресурсов"
-        android:inputType="textPersonName"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonIron"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
-        android:text="Железо"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSum" />
-
-    <Button
-        android:id="@+id/buttonSulfur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:text="Сера"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonIron"
-        app:layout_constraintStart_toEndOf="@+id/buttonIron" />
-
-    <Button
-        android:id="@+id/buttonMHQ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:text="МВК"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonSulfur"
-        app:layout_constraintStart_toEndOf="@+id/buttonSulfur" />
 
     <Button
         android:id="@+id/buttonSum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="88dp"
         android:text="Расчёт ресурса"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSulfur" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonSulfur" />
 
     <TextView
         android:id="@+id/textViewRes"
         android:layout_width="229dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="96dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSum" />
+
+    <ImageButton
+        android:id="@+id/imageButtonMHQ"
+        style="@style/ImageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonIron"
+        app:srcCompat="@drawable/hq_metal_ore" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSulfur"
+        style="@style/ImageButton"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSum"
+        app:srcCompat="@drawable/sulfur_ore" />
+
+    <ImageButton
+        android:id="@+id/imageButtonIron"
+        style="@style/ImageButton"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonSulfur"
+        app:layout_constraintEnd_toStartOf="@id/imageButtonMHQ"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonSulfur"
+        app:srcCompat="@drawable/metal_ore" />
 </android.support.constraint.ConstraintLayout>

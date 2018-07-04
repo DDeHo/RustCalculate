@@ -14,31 +14,37 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        buttonIron.setOnClickListener{
+        imageButtonIron.setOnClickListener{
             if (editTextSum.text.toString() == "") {
                 Toast.makeText(this, "Введите количество ресурса...", Toast.LENGTH_SHORT).show()
             }  else {
-                buttonIron.text = "Обработка..."
+                imageButtonIron.setImageResource(R.drawable.metal_fragments)
+                imageButtonMHQ.setImageResource(R.drawable.hq_metal_ore)
+                imageButtonSulfur.setImageResource(R.drawable.sulfur_ore)
                 resourse = editTextSum.text.toString().toInt() / slots * 5
                 Toast.makeText(this, "Собираем руду...", Toast.LENGTH_SHORT).show()
             }
         }
 
-        buttonSulfur.setOnClickListener {
+        imageButtonSulfur.setOnClickListener {
             if (editTextSum.text.toString() == "") {
                 Toast.makeText(this, "Введите количество ресурса...", Toast.LENGTH_SHORT).show()
             }   else {
-                buttonSulfur.text = "Обработка..."
+                imageButtonIron.setImageResource(R.drawable.metal_ore)
+                imageButtonMHQ.setImageResource(R.drawable.hq_metal_ore)
+                imageButtonSulfur.setImageResource(R.drawable.sulfur)
                 resourse = (editTextSum.text.toString().toInt() / slots * 2.5).toInt()
                 Toast.makeText(this, "Собираем руду...", Toast.LENGTH_SHORT).show()
             }
         }
 
-        buttonMHQ.setOnClickListener {
+        imageButtonMHQ.setOnClickListener {
             if (editTextSum.text.toString() == "") {
                 Toast.makeText(this, "Введите количество ресурса...", Toast.LENGTH_SHORT).show()
             }   else {
-                buttonMHQ.text = "Обработка..."
+                imageButtonIron.setImageResource(R.drawable.hq_metal_ore)
+                imageButtonSulfur.setImageResource(R.drawable.sulfur_ore)
+                imageButtonMHQ.setImageResource(R.drawable.metal_refined)
                 resourse = editTextSum.text.toString().toInt() / slots * 10
                 Toast.makeText(this, "Собираем руду...", Toast.LENGTH_SHORT).show()
             }
@@ -46,9 +52,9 @@ class MainActivity : AppCompatActivity() {
 
         buttonSum.setOnClickListener {
             textViewRes.text = "Вам нужно $resourse дерева."
-            buttonIron.text = "Железо"
-            buttonMHQ.text = "МВК"
-            buttonSulfur.text = "Сера"
+            imageButtonIron.setImageResource(R.drawable.metal_ore)
+            imageButtonSulfur.setImageResource(R.drawable.sulfur_ore)
+            imageButtonMHQ.setImageResource(R.drawable.hq_metal_ore)
         }
     }
 }
