@@ -11,13 +11,11 @@
         android:id="@+id/editTextSum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Количество ресурсов"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,4 +65,13 @@
         app:layout_constraintEnd_toStartOf="@id/imageButtonMHQ"
         app:layout_constraintStart_toEndOf="@+id/imageButtonSulfur"
         app:srcCompat="@drawable/metal_ore" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:entries="@array/slots"
+        app:layout_constraintStart_toEndOf="@+id/editTextSum"
+        app:layout_constraintTop_toTopOf="@+id/editTextSum" />
 </android.support.constraint.ConstraintLayout>
