@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             if (editTextSum.text.toString() == "") {
                 Toast.makeText(this, "Введите количество ресурса...", Toast.LENGTH_SHORT).show()
             }   else {
-                imageButtonIron.setImageResource(R.drawable.hq_metal_ore)
+                imageButtonIron.setImageResource(R.drawable.metal_ore)
                 imageButtonSulfur.setImageResource(R.drawable.sulfur_ore)
                 imageButtonMHQ.setImageResource(R.drawable.metal_refined)
                 resourse = editTextSum.text.toString().toInt() / slots * 10
